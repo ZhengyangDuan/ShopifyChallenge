@@ -119,8 +119,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="Category1" destination="qkf-S2-dhJ" id="ZYo-JI-ZGu"/>
-                        <outlet property="proviceview" destination="PFU-4a-aY5" id="KWy-nE-78A"/>
-                        <outlet property="yearview" destination="jva-p4-K7E" id="AZI-Fz-Q3O"/>
+                        <outlet property="provinceview" destination="PFU-4a-aY5" id="Vok-dC-Xuv"/>
+                        <outlet property="yearview" destination="jva-p4-K7E" id="gh9-uu-RkJ"/>
                         <segue destination="PTD-sg-BP4" kind="show" identifier="goToDetail" id="me4-re-dMP"/>
                     </connections>
                 </viewController>

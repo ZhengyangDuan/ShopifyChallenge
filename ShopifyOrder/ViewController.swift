@@ -15,9 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBOutlet weak var Category1: UILabel!
-    @IBOutlet weak var Category2: UILabel!
     @IBOutlet weak var yearview: UITableView!
-    @IBOutlet weak var proviceview: UITableView!
+    @IBOutlet weak var provinceview: UITableView!
     
     var orders:[JSON] = []
     var ordersByYear:[JSON] = []
@@ -32,13 +31,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         let json:JSON = JSON(getJSONData(urlToRequest: url!))
         yearview.separatorStyle = .none
-        proviceview.separatorStyle = .none
+        provinceview.separatorStyle = .none
         yearview.estimatedRowHeight = 30
-        proviceview.estimatedRowHeight = 30
+        provinceview.estimatedRowHeight = 30
         yearview.dataSource = self
         yearview.delegate = self
-        proviceview.delegate = self
-        proviceview.dataSource = self
+        provinceview.delegate = self
+        provinceview.dataSource = self
         repeat{
             orders.append(json["orders"][i])
             i += 1
