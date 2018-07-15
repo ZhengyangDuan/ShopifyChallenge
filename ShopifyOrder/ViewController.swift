@@ -46,13 +46,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         sortByProvince()
         
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if tableView.tag == 1{
             findyear(year: 2017)
-            return 1 + ordersByYear.count
+            if ordersByYear.count>10{
+                return 11
+            }else{
+                return 1 + ordersByYear.count
+            }
+            
         }
         else if tableView.tag == 2{
             return provinceSorted.count - 1

@@ -33,12 +33,13 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! detailcell
+        cell.textView.isEditable = false
         
         let key = provinceSorted[indexPath.row]
-        var s: String = "\(dict[key]!) order(s) from \(key)"
+        var s: String = "    \(dict[key]!) order(s) from \(key)"
         for i in 0..<orders.count{
             if orders[i]["shipping_address"]["province"].stringValue == key {
-                s = s + "\n   -Order ID:\(orders[i]["id"])"
+                s = s + "\n     -Order ID:\(orders[i]["id"])"
             }
         }
         cell.textView.text = s
