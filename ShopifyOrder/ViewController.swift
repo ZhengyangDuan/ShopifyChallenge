@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         else if tableView.tag == 2{
-            return provinceSorted.count - 1
+            return provinceSorted.count
         }else{
             return 0
         }
@@ -82,7 +82,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }else {
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! provincecell
-            cell2.provinceView.text = "\(dict[provinceSorted[indexPath.row+1]]!) orders creted at \(provinceSorted[indexPath.row+1])"
+            if provinceSorted[indexPath.row] == ""{
+                cell2.provinceView.text = "\(dict[provinceSorted[indexPath.row]]!) order(s) no province provided"
+            }else{
+                cell2.provinceView.text = "\(dict[provinceSorted[indexPath.row]]!) order(s) creted at \(provinceSorted[indexPath.row])"
+            }
+            
             
             return cell2
         }

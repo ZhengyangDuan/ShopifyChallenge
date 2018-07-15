@@ -23,7 +23,7 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         detailView.dataSource = self
         detailView.estimatedRowHeight = 100
         detailView.rowHeight = UITableViewAutomaticDimension
-        provinceSorted.removeFirst()
+        
         
     }
     
@@ -37,6 +37,9 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
         let key = provinceSorted[indexPath.row]
         var s: String = "    \(dict[key]!) order(s) from \(key)"
+        if key == "" {
+            s = "    \(dict[key]!) order(s) no province provided"
+        }
         for i in 0..<orders.count{
             if orders[i]["shipping_address"]["province"].stringValue == key {
                 s = s + "\n     -Order ID:\(orders[i]["id"])"
